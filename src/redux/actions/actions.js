@@ -15,7 +15,9 @@ export const getHomeMovies = (search) => {
                         ))
                     }
                 );
-                axios.all(promises).then(()=>dispatch({type:'SEARCH',movies:movies}));
+                axios.all(promises).then(()=>{
+                    dispatch({type:'SEARCH',movies:movies})
+                });
             }).catch((erro) => erro);
     }
 };
